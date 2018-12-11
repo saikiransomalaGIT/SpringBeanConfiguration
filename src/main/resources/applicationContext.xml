@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="textInformationProducer"
+		class="com.training.spring.producer.TextInformationProducer" />
+		
+	<bean id="htmlInformationProducer"
+		class="com.training.spring.producer.HTMLInformationProducer" />
+		
+	<bean id="informationSender"
+		class="com.training.spring.sender.InformationSender">
+		<property name="informationProducer" ref="textInformationProducer" />
+	</bean>
+	
+	<bean id="studentInfo"
+		class="com.training.spring.bean.StudentInfo">
+		<property name="name" value="Kunal Kishor" />
+		<property name="branch" value="Computer Science and Engineering" />
+		<property name="emailId" value="techieKunalKishor@gmail.com" />
+		<property name="rollNo" value="45" />
+		<property name="mobileNo" value="7204804987" />
+	</bean>
+
+</beans>
